@@ -1,35 +1,23 @@
 import * as React from "react"
-import styled, { createGlobalStyle, ThemeProvider } from "styled-components"
+import styled, { ThemeProvider } from "styled-components"
 import { Link } from "gatsby"
 import Footer from './footer'
 import { theme } from '../styles/theme'
+import { Container } from '../styles/styledComponents'
+import { GlobalStyle } from '../styles/globalStyle'
 
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    background: ${props => props.theme.background};
-  }
-  a, a:visited {
-    color: ${props => props.theme.primary}
-  }
-  p {
-    color: ${props => props.theme.textColor};
-    font-weight: ${props => props.theme.fontWeight};
-    font-size: ${props => props.theme.fontSize};
-  }
-  ul, li {
-    font-weight: 300;
-  }
-`
 
 const Wrapper = styled.div`
   min-height: 100vh;
-  padding-top: 80px;
-  max-width: 1024px;
 `
 
 const Header = styled.header`
-  
+  width: 100%;
+  padding: 10px 20px 10px;
+  border-bottom: 1px solid ${props => props.theme.border};
+  h1 {
+    margin: 0
+  }
 `
 
 const Layout = ({ location, title, children }) => {
@@ -39,13 +27,13 @@ const Layout = ({ location, title, children }) => {
 
   if (isRootPath) {
     header = (
-      <h1 className="main-heading">
+      <h1>
         <Link to="/">{title}</Link>
       </h1>
     )
   } else {
     header = (
-      <Link className="header-link-home" to="/">
+      <Link to="/">
         {title}
       </Link>
     )
@@ -54,13 +42,13 @@ const Layout = ({ location, title, children }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <div data-is-root-path={isRootPath}>
-        <Wrapper>
+      <Wrapper data-is-root-path={isRootPath}>
           <Header>{header}</Header>
-          <main>{children}</main>
+          <Container>
+            <main>{children}</main>
+          </Container>
           <Footer />
-        </Wrapper>
-      </div>
+      </Wrapper>
     </ThemeProvider>
   )
 }

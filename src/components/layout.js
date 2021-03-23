@@ -1,5 +1,36 @@
 import * as React from "react"
+import styled, { createGlobalStyle, ThemeProvider } from "styled-components"
 import { Link } from "gatsby"
+import Footer from './footer'
+import { theme } from '../styles/theme'
+
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background: ${props => props.theme.background};
+  }
+  a, a:visited {
+    color: ${props => props.theme.primary}
+  }
+  p {
+    color: ${props => props.theme.textColor};
+    font-weight: ${props => props.theme.fontWeight};
+    font-size: ${props => props.theme.fontSize};
+  }
+  ul, li {
+    font-weight: 300;
+  }
+`
+
+const Wrapper = styled.div`
+  min-height: 100vh;
+  padding-top: 80px;
+  max-width: 1024px;
+`
+
+const Header = styled.header`
+  
+`
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -19,17 +50,18 @@ const Layout = ({ location, title, children }) => {
       </Link>
     )
   }
-
+  
   return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header className="global-header">{header}</header>
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <div data-is-root-path={isRootPath}>
+        <Wrapper>
+          <Header>{header}</Header>
+          <main>{children}</main>
+          <Footer />
+        </Wrapper>
+      </div>
+    </ThemeProvider>
   )
 }
 

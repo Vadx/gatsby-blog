@@ -9,9 +9,8 @@ const StyledFooter = styled.footer`
 const Footer = () => {
   return (
     <StyledFooter>
-      © {new Date().getFullYear()}, Built with
-      {` `}
-      <a href="https://www.gatsbyjs.com">Gatsby</a>
+      © {new Date().getFullYear()}, Design by{" "}
+      <a href="https://www.gatsbyjs.com">Vadx</a>
     </StyledFooter>
   )
 }

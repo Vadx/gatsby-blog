@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteTitle = data.site.siteMetadata?.title || "Title"
   const posts = data.allMarkdownRemark.nodes
 
   if (posts.length === 0) {
@@ -24,17 +24,14 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      
-      <ol style={{ listStyle: `none` }}>
+
+      <ol style={{ listStyle: "none" }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
           return (
             <li key={post.fields.slug}>
-              <article
-                itemScope
-                itemType="http://schema.org/Article"
-              >
+              <article itemScope itemType="http://schema.org/Article">
                 <header>
                   <h2>
                     <Link to={post.fields.slug} itemProp="url">

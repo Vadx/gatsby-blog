@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 export default function Menu() {
   // Open PopUp
@@ -14,12 +15,10 @@ export default function Menu() {
   let menu
   menu = (
     <Navigation>
-      <NavItem href="/" className="active">
-        Platform
-      </NavItem>
-      <NavItem href="consulting">Solutions</NavItem>
-      <NavItem href="/pricing">Pricing</NavItem>
-      <NavItem href="/contacts">Contacts</NavItem>
+      <NavItem to="/" activeClassName="active">Home</NavItem>
+      <NavItem to="/consulting" activeClassName="active">Solutions</NavItem>
+      <NavItem to="/pricing" activeClassName="active">Pricing</NavItem>
+      <NavItem to="/contact" activeClassName="active">Contacts</NavItem>
     </Navigation>
   )
   return (
@@ -58,7 +57,7 @@ const Navigation = styled.nav`
   }
 `
 
-const NavItem = styled.a`
+const NavItem = styled(Link)`
   margin-left: 35px;
   text-decoration: none !important;
   font-size: 16px;

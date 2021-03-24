@@ -15,10 +15,12 @@ export default function Menu() {
   let menu
   menu = (
     <Navigation>
-      <NavItem to="/" activeClassName="active">Home</NavItem>
-      <NavItem to="/consulting" activeClassName="active">Solutions</NavItem>
-      <NavItem to="/pricing" activeClassName="active">Pricing</NavItem>
-      <NavItem to="/contact" activeClassName="active">Contacts</NavItem>
+      <NavItem to="/" activeClassName="active">
+        Home
+      </NavItem>
+      <NavItem to="/contact" activeClassName="active">
+        Contacts
+      </NavItem>
     </Navigation>
   )
   return (

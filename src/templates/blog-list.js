@@ -3,8 +3,9 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Pagination from "../components/pagination"
 
-const BlogIndex = ({ data, location }) => {
+const BlogList = ({ data, location, pageContext }) => {
   const siteTitle = data.site.siteMetadata?.title || "Title"
   const posts = data.allMarkdownRemark.nodes
 
@@ -23,7 +24,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="All posts !!" />
 
       <ol style={{ listStyle: "none" }}>
         {posts.map(post => {
@@ -53,20 +54,29 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </ol>
+
+      <Pagination
+        numPages={pageContext.numPages}
+        currentPage={pageContext.currentPage}
+      />
     </Layout>
   )
 }
 
-export default BlogIndex
+export default BlogList
 
 export const pageQuery = graphql`
-  query {
+  query blogListQuery($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
       nodes {
         excerpt
         fields {

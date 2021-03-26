@@ -1,10 +1,30 @@
 import * as React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faArrowRight,
+  faArrowLeft
+} from '@fortawesome/free-solid-svg-icons'
 
-const StyledPagination = styled.footer`
+// Styled components:
+const StyledPagination = styled.div`
   text-align: center;
   padding: 10px 0 10px;
+  display: flex;
+  justify-content: space-between;
+`
+
+const Left = styled.div`
+  text-align: left;
+`
+
+const Center = styled.div`
+  text-align: center;
+`
+
+const Right = styled.div`
+  text-align: right;
 `
 
 const Pagination = ({ currentPage, numPages }) => {
@@ -12,27 +32,32 @@ const Pagination = ({ currentPage, numPages }) => {
 
   return (
     <StyledPagination>
-      <nav className="pagination">
-        {currentPage > 1 ? (
-          <Link
-            title="Go to previous page"
-            // to={`/blog/${currentPage - 1}`}>
-            to={prevPage}
-          >
-            ← Newer posts
-          </Link>
-        ) : (
-          <span />
-        )}
-        Page {currentPage} of {numPages}
-        {currentPage < numPages ? (
-          <Link title="Go to next page" to={`/blog/${currentPage + 1}`}>
-            Older posts →
-          </Link>
-        ) : (
-          <span />
-        )}
-      </nav>
+        <Left>
+          {currentPage > 1 ? (
+            <Link
+              title="Go to previous page"
+              to={prevPage}
+            >
+              <FontAwesomeIcon icon={faArrowLeft} size="1x" />
+            </Link>
+          ) : (
+            <span />
+          )}
+        </Left>
+
+        <Center>
+          Page {currentPage} of {numPages}
+        </Center>
+
+        <Right>
+          {currentPage < numPages ? (
+            <Link title="Go to next page" to={`/page/${currentPage + 1}`}>
+              <FontAwesomeIcon icon={faArrowRight} size="1x" />
+            </Link>
+          ) : (
+            <span />
+          )}
+        </Right>
     </StyledPagination>
   )
 }

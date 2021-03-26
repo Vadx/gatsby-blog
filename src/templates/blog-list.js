@@ -13,18 +13,14 @@ const BlogList = ({ data, location, pageContext }) => {
     return (
       <Layout location={location} title={siteTitle}>
         <SEO title="All posts" />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
+        <p>No blog posts found.</p>
       </Layout>
     )
   }
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts !!" />
+      <SEO title="All posts" />
 
       <ol style={{ listStyle: "none" }}>
         {posts.map(post => {

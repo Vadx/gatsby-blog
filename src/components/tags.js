@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 const Tags = ({ children }) =>
   children && (
@@ -16,7 +17,9 @@ const Tags = ({ children }) =>
             color: "#000",
           }}
         >
-          {t}
+          <Link to={`/tags/${t}/`}>
+            {t}
+          </Link>
         </li>
       ))}
     </ul>

@@ -1,11 +1,8 @@
 import * as React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faArrowRight,
-  faArrowLeft
-} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 
 // Styled components:
 const StyledPagination = styled.div`
@@ -32,32 +29,29 @@ const Pagination = ({ currentPage, numPages }) => {
 
   return (
     <StyledPagination>
-        <Left>
-          {currentPage > 1 ? (
-            <Link
-              title="Go to previous page"
-              to={prevPage}
-            >
-              <FontAwesomeIcon icon={faArrowLeft} size="1x" />
-            </Link>
-          ) : (
-            <span />
-          )}
-        </Left>
+      <Left>
+        {currentPage > 1 ? (
+          <Link title="Go to previous page" to={prevPage}>
+            <FontAwesomeIcon icon={faArrowLeft} size="1x" />
+          </Link>
+        ) : (
+          <span />
+        )}
+      </Left>
 
-        <Center>
-          Page {currentPage} of {numPages}
-        </Center>
+      <Center>
+        Page {currentPage} of {numPages}
+      </Center>
 
-        <Right>
-          {currentPage < numPages ? (
-            <Link title="Go to next page" to={`/page/${currentPage + 1}`}>
-              <FontAwesomeIcon icon={faArrowRight} size="1x" />
-            </Link>
-          ) : (
-            <span />
-          )}
-        </Right>
+      <Right>
+        {currentPage < numPages ? (
+          <Link title="Go to next page" to={`/page/${currentPage + 1}`}>
+            <FontAwesomeIcon icon={faArrowRight} size="1x" />
+          </Link>
+        ) : (
+          <span />
+        )}
+      </Right>
     </StyledPagination>
   )
 }

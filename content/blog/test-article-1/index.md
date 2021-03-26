@@ -2,6 +2,7 @@
 title: Test article 1
 date: "2017-05-01T22:12:03.284Z"
 description: "Test article 1"
+tags: ["travel", "europe", "naturephotography"]
 ---
 
 This is my first post on my new fake blog! How exciting!

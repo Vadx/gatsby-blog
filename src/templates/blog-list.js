@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Pagination from "../components/pagination"
+import Tags from "../components/tags"
 
 const BlogList = ({ data, location, pageContext }) => {
   const siteTitle = data.site.siteMetadata?.title || "Title"
@@ -25,9 +26,11 @@ const BlogList = ({ data, location, pageContext }) => {
       <ol style={{ listStyle: "none" }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
+          const tags = post.frontmatter.tags
 
           return (
             <li key={post.fields.slug}>
+              {console.log("Tags ===>", tags)}
               <article itemScope itemType="http://schema.org/Article">
                 <header>
                   <h2>
@@ -35,7 +38,7 @@ const BlogList = ({ data, location, pageContext }) => {
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.frontmatter.date}</small>
+                  <Tags>{tags}</Tags>
                 </header>
                 <section>
                   <p
@@ -82,6 +85,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          tags
         }
       }
     }

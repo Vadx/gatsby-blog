@@ -8,3 +8,13 @@ export const Container = styled.div`
   margin-right: auto;
   max-width: 1024px;
 `
+
+export const HeadlineH1 = styled.h1`
+  font-size: 160%;
+  margin: 0 0 30px;
+`
+
+export const HeadlineH2 = styled.h2`
+  font-size: 140%;
+  margin: 0 0 30px;
+`

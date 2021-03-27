@@ -1,5 +1,6 @@
 import * as React from "react"
 import styled, { ThemeProvider } from "styled-components"
+import { Normalize } from 'styled-normalize'
 import { Link } from "gatsby"
 
 import Menu from "./menu"
@@ -25,6 +26,7 @@ const Layout = ({ location, title, children }) => {
 
   return (
     <ThemeProvider theme={theme}>
+      <Normalize />
       <GlobalStyle />
       <Wrapper data-is-root-path={isRootPath}>
         <Header>

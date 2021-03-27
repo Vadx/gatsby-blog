@@ -1,5 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -10,8 +11,8 @@ const NotFoundPage = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="404: Not Found" />
-      <h1>404: Not Found</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+      <Title>404: Not Found</Title>
+      <Description>You just hit a route that doesn&#39;t exist... the sadness.</Description>
     </Layout>
   )
 }
@@ -26,4 +27,17 @@ export const pageQuery = graphql`
       }
     }
   }
+`
+
+//Styled components:
+
+const Title = styled.h1`
+ text-align: center;
+ margin: 0 0 20px 0;
+ padding-top: 40px;
+`
+
+const Description = styled.p`
+  margin: 0;
+  text-align: center;
 `

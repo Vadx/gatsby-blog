@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Pagination from "../components/pagination"
 import Tags from "../components/tags"
+import { HeadlineH1 } from "../styles/styledComponents"
 
 const BlogList = ({ data, location, pageContext }) => {
   const siteTitle = data.site.siteMetadata?.title || "Title"
@@ -32,11 +33,11 @@ const BlogList = ({ data, location, pageContext }) => {
             <li key={post.fields.slug}>
               <article itemScope itemType="http://schema.org/Article">
                 <header>
-                  <h2>
+                  <HeadlineH1>
                     <Link to={post.fields.slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>
-                  </h2>
+                  </HeadlineH1>
                   <Tags>{tags}</Tags>
                 </header>
                 <section>

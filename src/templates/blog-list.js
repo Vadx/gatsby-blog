@@ -30,7 +30,6 @@ const BlogList = ({ data, location, pageContext }) => {
 
           return (
             <li key={post.fields.slug}>
-              {console.log("Tags ===>", tags)}
               <article itemScope itemType="http://schema.org/Article">
                 <header>
                   <h2>

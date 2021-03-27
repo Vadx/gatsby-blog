@@ -4,26 +4,6 @@ import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 
-// Styled components:
-const StyledPagination = styled.div`
-  text-align: center;
-  padding: 10px 0 10px;
-  display: flex;
-  justify-content: space-between;
-`
-
-const Left = styled.div`
-  text-align: left;
-`
-
-const Center = styled.div`
-  text-align: center;
-`
-
-const Right = styled.div`
-  text-align: right;
-`
-
 const Pagination = ({ currentPage, numPages }) => {
   const prevPage = currentPage - 1 === 1 ? "/" : (currentPage - 1).toString()
 
@@ -57,3 +37,23 @@ const Pagination = ({ currentPage, numPages }) => {
 }
 
 export default Pagination
+
+// Styled components:
+const StyledPagination = styled.div`
+  text-align: center;
+  padding: 10px 0 10px;
+  display: flex;
+  justify-content: space-between;
+`
+
+const Left = styled.div`
+  text-align: left;
+`
+
+const Center = styled.div`
+  text-align: center;
+`
+
+const Right = styled.div`
+  text-align: right;
+`

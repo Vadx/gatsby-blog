@@ -3,8 +3,11 @@ import PropTypes from "prop-types"
 
 // Components
 import { Link, graphql } from "gatsby"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
-const Tags = ({ pageContext, data }) => {
+const Tags = ({ pageContext, data, location }) => {
+  const siteTitle = data.site.siteMetadata?.title || "Tags"
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} post${
@@ -12,7 +15,8 @@ const Tags = ({ pageContext, data }) => {
   } tagged with "${tag}"`
 
   return (
-    <div>
+    <Layout location={location} title={siteTitle}>
+      <SEO title={siteTitle} />
       <h1>{tagHeader}</h1>
       <ul>
         {edges.map(({ node }) => {
@@ -25,12 +29,8 @@ const Tags = ({ pageContext, data }) => {
           )
         })}
       </ul>
-      {/*
-              This links to a page that does not yet exist.
-              You'll come back to it!
-            */}
       <Link to="/tags">All tags</Link>
-    </div>
+    </Layout>
   )
 }
 
@@ -61,6 +61,11 @@ export default Tags
 
 export const pageQuery = graphql`
   query($tag: String) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }

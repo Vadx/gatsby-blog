@@ -18,6 +18,9 @@ export default function Menu() {
       <NavItem to="/" activeClassName="active">
         Home
       </NavItem>
+      <NavItem to="/tags" activeClassName="active">
+        Tags
+      </NavItem>
       <NavItem to="/contact" activeClassName="active">
         Contacts
       </NavItem>

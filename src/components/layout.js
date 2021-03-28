@@ -8,30 +8,17 @@ import Footer from "./footer"
 import { theme } from "../styles/theme"
 import { Container } from "../styles/styledComponents"
 import { GlobalStyle } from "../styles/globalStyle"
+import Logo from "./logo"
 
-const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  const isRootPath = location.pathname === rootPath
-  let header
-
-  if (isRootPath) {
-    header = (
-      <h1>
-        <Link to="/">{title}</Link>
-      </h1>
-    )
-  } else {
-    header = <Link to="/">{title}</Link>
-  }
-
+const Layout = ({ location, children }) => {
   return (
     <ThemeProvider theme={theme}>
       <Normalize />
       <GlobalStyle />
-      <Wrapper data-is-root-path={isRootPath}>
+      <Wrapper>
         <Header>
           <HeaderInner>
-            {header}
+            <Link to="/"><Logo /></Link>
             <Menu />
           </HeaderInner>
         </Header>

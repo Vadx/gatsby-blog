@@ -138,7 +138,7 @@ const Bg = styled.div`
 const MenuWrap = styled.div`
   margin: 50px 20px 0 auto;
   padding: 15px 0 15px;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #fff;
   width: 200px;
   position: relative;

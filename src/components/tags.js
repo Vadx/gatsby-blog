@@ -25,15 +25,15 @@ const TagsList = styled.ul`
     list-style: none;
 
     a {
-      color: #000;
+      color: ${props => props.theme.textColorPrimary};
       text-decoration: none;
       font-size: 80%;
-      background-color: #eee;
+      background-color: ${props => props.theme.borderColor};
       border-radius: 4px;
       padding: 3px 6px;
 
       &::hover {
-        opacity: 0.7;
+        opacity: 0.5;
       }
     }
   }

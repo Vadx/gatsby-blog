@@ -54,7 +54,7 @@ const Header = styled.header`
   width: 100%;
   padding: 10px 20px 10px;
   background: ${props => props.theme.headerBg};
-  border-bottom: 1px solid ${props => props.theme.border};
+  border-bottom: 1px solid ${props => props.theme.borderColor};
   h1 {
     margin: 0;
   }

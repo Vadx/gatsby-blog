@@ -23,7 +23,10 @@ const Pagination = ({ currentPage, numPages }) => {
       </Left>
 
       <Center>
-        <StyledText>Page</StyledText> {currentPage} <StyledText>of</StyledText> {numPages}
+        <StyledText>Page</StyledText>
+        <PageName>{currentPage}</PageName>
+        <StyledText>of</StyledText>
+        <PageName>{numPages}</PageName>
       </Center>
 
       <Right>
@@ -53,15 +56,20 @@ const Left = styled.div`
   text-align: left;
 `
 
+const Right = styled.div`
+  text-align: right;
+`
+
 const Center = styled.div`
   text-align: center;
   font-size: 90%;
 `
 
-const Right = styled.div`
-  text-align: right;
-`
-
 const StyledText = styled.span`
   color: ${props => props.theme.textColorSecondary};
+`
+
+const PageName = styled.span`
+  font-weight: 500;
+  margin: 0 10px;
 `

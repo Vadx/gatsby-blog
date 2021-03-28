@@ -18,6 +18,9 @@ export default function Menu() {
       <NavItem to="/" activeClassName="active">
         Home
       </NavItem>
+      <NavItem to="/about" activeClassName="active">
+        About
+      </NavItem>
       <NavItem to="/tags" activeClassName="active">
         Tags
       </NavItem>
@@ -68,19 +71,35 @@ const NavItem = styled(Link)`
   font-size: 16px;
   font-weight: 400;
   position: relative;
-  &:hover {
-    opacity: 0.8;
+  color: ${props => props.theme.textColorSecondary};
+
+  @media only screen and (max-width: 960px) {
+    margin-left: 0;
+    padding: 5px 5px 5px 15px;
   }
-  &.active:after {
-    content: "";
-    width: 100%;
-    height: 2px;
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    background-color: ${props => props.theme.primary};
-    @media only screen and (max-width: 960px) {
-      dispaly: none;
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &.active {
+    color: ${props => props.theme.textColorPrimary};
+
+    &:after {
+      content: "";
+      width: 100%;
+      height: 3px;
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      background-color: ${props => props.theme.primary};
+      @media only screen and (max-width: 960px) {
+        width: 3px;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 100%;
+        top: 0;
+      }
     }
   }
 `
@@ -118,7 +137,7 @@ const Bg = styled.div`
 
 const MenuWrap = styled.div`
   margin: 50px 20px 0 auto;
-  padding: 15px 0 0;
+  padding: 15px 0 15px;
   border-radius: 10px;
   background-color: #fff;
   width: 200px;

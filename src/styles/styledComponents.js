@@ -6,7 +6,8 @@ export const Container = styled.div`
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1024px;
+  max-width: ${props => props.theme.containerWidth};
+  padding: 0 20px;
 `
 
 export const HeadlineH1 = styled.h1`

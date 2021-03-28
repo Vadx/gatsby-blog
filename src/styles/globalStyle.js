@@ -47,7 +47,7 @@ export const GlobalStyle = createGlobalStyle`
   /* Prose */
 
   p {
-    color: ${props => props.theme.textColor};
+    color: ${props => props.theme.textColorPrimary};
     font-weight: ${props => props.theme.fontWeight};
     font-size: ${props => props.theme.fontSize};
   }
@@ -107,8 +107,7 @@ export const GlobalStyle = createGlobalStyle`
 
   /* Link */
 
-  a, 
-  a:visited {
+  a {
     color: ${props => props.theme.primary};
   }
 

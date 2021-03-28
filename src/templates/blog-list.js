@@ -1,6 +1,8 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import styled from "styled-components"
 
+// Components
+import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Pagination from "../components/pagination"
@@ -24,13 +26,13 @@ const BlogList = ({ data, location, pageContext }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
 
-      <ol style={{ listStyle: "none" }}>
+      <List>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
           const tags = post.frontmatter.tags
 
           return (
-            <li key={post.fields.slug}>
+            <PostItem key={post.fields.slug}>
               <article itemScope itemType="http://schema.org/Article">
                 <header>
                   <HeadlineH1>
@@ -49,10 +51,10 @@ const BlogList = ({ data, location, pageContext }) => {
                   />
                 </section>
               </article>
-            </li>
+            </PostItem>
           )
         })}
-      </ol>
+      </List>
 
       <Pagination
         numPages={pageContext.numPages}
@@ -63,6 +65,15 @@ const BlogList = ({ data, location, pageContext }) => {
 }
 
 export default BlogList
+
+// Styled components:
+const List = styled.ol`
+  list-style: none;
+`
+
+const PostItem = styled.li`
+  margin: 0 0 30px;
+`
 
 export const pageQuery = graphql`
   query blogListQuery($skip: Int!, $limit: Int!) {

@@ -30,49 +30,6 @@ export const GlobalStyle = createGlobalStyle`
     border: 0;
   }
 
-  /* Heading */
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    
-  }
-
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-  
-  }
-
-  h1 {
-    
-  }
-
-  h2 {
-    
-  }
-
-  h3 {
-    
-  }
-
-  h4 {
-    
-  }
-
-  h5 {
-    
-  }
-
-  h6 {
-    
-  }
-
   h1 > a {
     color: inherit;
     text-decoration: none;
@@ -197,46 +154,4 @@ export const GlobalStyle = createGlobalStyle`
   [type="submit"] {
     -webkit-appearance: button;
   }
-
-  /**
-  * Remove the inner border and padding in Firefox.
-  */
-
-  button::-moz-focus-inner,
-  [type="button"]::-moz-focus-inner,
-  [type="reset"]::-moz-focus-inner,
-  [type="submit"]::-moz-focus-inner {
-    border-style: none;
-    padding: 0;
-  }
-
-  /**
-  * Restore the focus styles unset by the previous rule.
-  */
-
-  button:-moz-focusring,
-  [type="button"]:-moz-focusring,
-  [type="reset"]:-moz-focusring,
-  [type="submit"]:-moz-focusring {
-    outline: 1px dotted ButtonText;
-  }
-
-  /**
-  * Correct the padding in Firefox.
-  */
-
-  fieldset {
-    padding: 0.35em 0.75em 0.625em;
-  }
-
-  textarea {
-    overflow: auto;
-  }
-
-  [type="checkbox"],
-  [type="radio"] {
-    box-sizing: border-box; /* 1 */
-    padding: 0; /* 2 */
-  }
-
 `

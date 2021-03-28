@@ -1,6 +1,7 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import styled from "styled-components"
 
+import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -36,37 +37,48 @@ const BlogPostTemplate = ({ data, location }) => {
           <Bio />
         </footer>
       </article>
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "space-between",
-            listStyle: "none",
-            padding: 0,
-          }}
-        >
+      <nav>
+        <NavWrap>
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
+              <LinkNav to={previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
-              </Link>
+              </LinkNav>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
+              <LinkNav to={next.fields.slug} rel="next">
                 {next.frontmatter.title} →
-              </Link>
+              </LinkNav>
             )}
           </li>
-        </ul>
+        </NavWrap>
       </nav>
     </Layout>
   )
 }
 
 export default BlogPostTemplate
+
+const NavWrap = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+`
+
+const LinkNav = styled(Link)`
+  text-decoration: none;
+  padding: 8px 11px;
+  /* background-color: transparent; */
+  /* transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; */
+
+  &:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+`
 
 export const pageQuery = graphql`
   query BlogPostBySlug(

@@ -11,7 +11,7 @@ export const Container = styled.div`
 
 export const HeadlineH1 = styled.h1`
   font-size: 160%;
-  margin: 0 0 30px;
+  margin: 0 0 10px;
 `
 
 export const HeadlineH2 = styled.h2`

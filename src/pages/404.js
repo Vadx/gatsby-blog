@@ -12,7 +12,9 @@ const NotFoundPage = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="404: Not Found" />
       <Title>404: Not Found</Title>
-      <Description>You just hit a route that doesn&#39;t exist... the sadness.</Description>
+      <Description>
+        You just hit a route that doesn&#39;t exist... the sadness.
+      </Description>
     </Layout>
   )
 }
@@ -32,9 +34,9 @@ export const pageQuery = graphql`
 //Styled components:
 
 const Title = styled.h1`
- text-align: center;
- margin: 0 0 20px 0;
- padding-top: 40px;
+  text-align: center;
+  margin: 0 0 20px 0;
+  padding-top: 40px;
 `
 
 const Description = styled.p`

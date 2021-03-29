@@ -11,9 +11,7 @@ const Footer = () => {
             © {new Date().getFullYear()}, Design by{" "}
             <a href="instagram.com/_vadx_">Vadx</a>
           </Left>
-          <Right>
-            icons
-          </Right>
+          <Right>icons</Right>
         </InnerWrap>
       </Container>
     </StyledFooter>
@@ -42,5 +40,3 @@ const Left = styled.div`
 const Right = styled.div`
   text-align: right;
 `
-
-

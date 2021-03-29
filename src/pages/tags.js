@@ -16,7 +16,7 @@ const TagsPage = ({
       siteMetadata: { siteTitle },
     },
   },
-  location
+  location,
 }) => (
   <Layout location={location} title={siteTitle}>
     <SEO title="All tags" />

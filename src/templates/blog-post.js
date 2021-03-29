@@ -75,7 +75,7 @@ const LinkNav = styled(Link)`
   /* background-color: transparent; */
   /* transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; */
 
-  &:hover{
+  &:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
 `

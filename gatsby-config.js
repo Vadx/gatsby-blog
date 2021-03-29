@@ -12,6 +12,7 @@ module.exports = {
     },
   },
   plugins: [
+    "gatsby-plugin-page-transitions",
     "gatsby-plugin-image",
     {
       resolve: "gatsby-source-filesystem",

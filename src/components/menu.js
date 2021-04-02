@@ -90,7 +90,7 @@ const NavItem = styled(Link)`
       height: 3px;
       position: absolute;
       left: 0;
-      bottom: -8px;
+      bottom: -6px;
       background-color: ${props => props.theme.primary};
       @media only screen and (max-width: 960px) {
         width: 3px;

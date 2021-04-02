@@ -11,5 +11,6 @@ export const theme = {
   fontSize: "15px",
   fontWeight: 300,
   lineHeight: 1.5,
-  fontFamily: "Roboto,sans-serif"
+  fontFamily: "Roboto,sans-serif",
+  iconsColor: "rgba(0, 0, 0, 0.50)"
 }

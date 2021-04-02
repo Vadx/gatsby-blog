@@ -7,15 +7,15 @@ export const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: ${props => props.theme.containerWidth};
-  padding: 0 20px;
+  padding: 0 20px 0;
 `
 
 export const HeadlineH1 = styled.h1`
-  font-size: 160%;
+  font-size: 180%;
   margin: 0 0 10px;
 `
 
 export const HeadlineH2 = styled.h2`
-  font-size: 140%;
+  font-size: 160%;
   margin: 0 0 30px;
 `

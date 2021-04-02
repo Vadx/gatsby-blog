@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
         <Header />
         <PageTransition transitionTime={500}>
           <Container>
-            <main>{children}</main>
+            <Main>{children}</Main>
           </Container>
         </PageTransition>
         <Footer />
@@ -31,4 +31,8 @@ export default Layout
 
 const Wrapper = styled.div`
   min-height: 100vh;
+`
+
+const Main = styled.main`
+  padding-top: 40px;
 `

@@ -11,9 +11,9 @@ const Header = () => {
     <StyledHeader>
       <Container>
         <HeaderInner>
-          <Link to="/">
+          <LogoLink to="/">
             <Logo />
-          </Link>
+          </LogoLink>
           <Menu />
         </HeaderInner>
       </Container>
@@ -26,12 +26,9 @@ export default Header
 // Styled components:
 const StyledHeader = styled.header`
   width: 100%;
-  padding: 5px 0px 5px;
+  padding: 4px 0px 4px;
   background: ${props => props.theme.headerBg};
   border-bottom: 1px solid ${props => props.theme.borderColor};
-  h1 {
-    margin: 0;
-  }
 `
 
 const HeaderInner = styled.div`
@@ -41,4 +38,9 @@ const HeaderInner = styled.div`
   width: 100%;
   margin: auto;
   min-height: 64px;
+`
+
+const LogoLink = styled(Link)`
+  line-height: 1;
+  display: inline-flex;
 `

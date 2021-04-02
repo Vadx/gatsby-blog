@@ -13,7 +13,10 @@ const Logo = () => (
 export default Logo
 
 // Styled components:
-const LogoImage = styled.span``
+const LogoImage = styled.span`
+  line-height: 1;
+  display: inline-flex;
+`
 
 const PathText = styled.path`
   fill: ${props => props.theme.textColorPrimary};

@@ -9,7 +9,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const blogPost = path.resolve("./src/templates/blog-post.js")
 
   // Define a template for blog list
-  const blogList = path.resolve("./src/templates/blog-list.js")
+  // const blogList = path.resolve("./src/templates/blog-list.js")
+
+  const blogList = path.resolve("./src/templates/blog-list-three-columns.js")
 
   //Tags tamplate
   const tagTemplate = path.resolve("./src/templates/tags.js")

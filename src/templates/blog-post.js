@@ -6,6 +6,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Tags from "../components/tags"
+import { HeadlineH1 } from "../styles/styledComponents"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -24,7 +25,7 @@ const BlogPostTemplate = ({ data, location }) => {
         itemType="http://schema.org/Article"
       >
         <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
+          <HeadlineH1 itemProp="headline">{post.frontmatter.title}</HeadlineH1>
           <p>{post.frontmatter.date}</p>
           <Tags>{post.frontmatter.tags}</Tags>
         </header>

@@ -4,7 +4,12 @@ import { Container } from "../styles/styledComponents"
 
 // Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faInstagram, faFacebookSquare, faTwitter, faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
+import {
+  faInstagram,
+  faFacebookSquare,
+  faTwitter,
+  faLinkedinIn,
+} from "@fortawesome/free-brands-svg-icons"
 
 const Footer = () => {
   return (
@@ -16,16 +21,16 @@ const Footer = () => {
             <a href="instagram.com/_vadx_">Vadx</a>
           </Left>
           <Right>
-            <IconLink href='https://instagram.com/_vadx_' target='_blank'>
+            <IconLink href="https://instagram.com/_vadx_" target="_blank">
               <FontAwesomeIcon icon={faInstagram} size="lg" />
             </IconLink>
-            <IconLink href='https://facebook.com' target='_blank'>
+            <IconLink href="https://facebook.com" target="_blank">
               <FontAwesomeIcon icon={faFacebookSquare} size="lg" />
             </IconLink>
-            <IconLink href='https://twitter.com' target='_blank'>
+            <IconLink href="https://twitter.com" target="_blank">
               <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
             </IconLink>
-            <IconLink href='https://twitter.com' target='_blank'>
+            <IconLink href="https://twitter.com" target="_blank">
               <FontAwesomeIcon icon={faTwitter} size="lg" />
             </IconLink>
           </Right>

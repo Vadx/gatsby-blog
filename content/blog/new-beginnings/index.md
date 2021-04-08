@@ -3,6 +3,7 @@ title: New Beginnings
 date: "2015-05-28T22:40:32.169Z"
 description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
 tags: ["travel", "nature", "europe"]
+featuredImg: "../../images/610-640x360.jpeg"
 ---
 
 Far far away, behind the word mountains, far from the countries Vokalia and

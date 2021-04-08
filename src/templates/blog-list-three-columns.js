@@ -2,6 +2,7 @@ import * as React from "react"
 import styled from "styled-components"
 
 // Components
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -29,10 +30,16 @@ const BlogList = ({ data, location, pageContext }) => {
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
           const tags = post.frontmatter.tags
+          const image = getImage(post.frontmatter.featuredImg)
+          // const image = post.frontmatter.featuredImg
 
           return (
             <PostItem key={post.fields.slug}>
               <article itemScope itemType="http://schema.org/Article">
+                {/* <GatsbyImage image={image} alt={title} /> */}
+                {console.log("IMAGE===>", image)}
+
+                {!image && <span>Hello World</span>}
                 <header>
                   <HeadlineH3>
                     <Link to={post.fields.slug} itemProp="url">
@@ -88,9 +95,9 @@ const HeadlineH3 = styled.h3`
   margin: 0 0 20px;
 
   a {
-   &:hover {
-     text-decoration: underline;
-   } 
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `
 
@@ -116,6 +123,7 @@ export const pageQuery = graphql`
           title
           description
           tags
+          featuredImg
         }
       }
     }

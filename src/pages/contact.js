@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import ContactForm from "../components/contact-form"
 
 const Contact = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -11,7 +12,7 @@ const Contact = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Contact" />
       <h1>Contact</h1>
-      <p>Coming soon...</p>
+      <ContactForm />
     </Layout>
   )
 }

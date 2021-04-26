@@ -36,9 +36,8 @@ const BlogList = ({ data, location, pageContext }) => {
           return (
             <PostItem key={post.fields.slug}>
               <article itemScope itemType="http://schema.org/Article">
-                {/* <GatsbyImage image={image} alt={title} /> */}
+                <GatsbyImage image={post.frontmatter.featuredImg} alt={title} />
                 {console.log("IMAGE===>", image)}
-
                 {!image && <span>Hello World</span>}
                 <header>
                   <HeadlineH3>

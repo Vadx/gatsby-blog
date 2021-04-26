@@ -54,7 +54,7 @@ export const GlobalStyle = createGlobalStyle`
 
   ul,
   ol {
-    margin-left: 0;
+    margin-left: 20px;
     margin-right: 0;
     padding: 0;
     margin-bottom: 20px;

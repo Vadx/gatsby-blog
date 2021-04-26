@@ -3,7 +3,7 @@ title: My Second Post!
 date: "2015-05-06T23:46:37.121Z"
 description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
 tags: ["travel", "nature", "naturephotography"]
-featuredImg: "../../images/610-640x360.jpeg"
+featuredImg: "../../../src/images/610-640x360.jpeg"
 ---
 
 Wow! I love blogging so much already.

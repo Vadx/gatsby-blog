@@ -64,18 +64,7 @@ const ContactForm = () => {
           )}
         />
         {errors?.message?.type === "required" && <FormErrorMessage>This field is required</FormErrorMessage>}
-      </FormGroup> 
-
-      {/* <FormFeedbackWrapper>
-            {netlify.success && (
-              <FormSucessFeedback>Message sent succesfully</FormSucessFeedback>
-            )}
-            {netlify.error && (
-              <FormErrorFeedback>
-                Something went wrong, please try again.
-              </FormErrorFeedback>
-            )}
-      </FormFeedbackWrapper> */}
+      </FormGroup>
 
       <FormButton type="submit">Send Message</FormButton>
 
@@ -126,19 +115,6 @@ const FormErrorMessage = styled.span`
   opacity: 0.7;
 `
 
-const FormFeedbackWrapper = styled.div`
-  margin-top: 1rem;
-  text-transform: uppercase;
-`
-
-const FormSucessFeedback = styled.span`
-  color: green;
-`
-
-const FormErrorFeedback = styled.span`
-  color: red;
-`
-
 const FormButton = styled.button`
   margin-top: 1rem;
   padding: 0.45rem;
@@ -149,4 +125,5 @@ const FormButton = styled.button`
   border: 1px solid rgba(255, 255, 255, 0.8);
   text-transform: uppercase;
   border-radius: 4px;
+  cursor: pointer;
 `

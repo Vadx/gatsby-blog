@@ -16,11 +16,11 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <Wrapper>
         <Header />
-        <PageTransition transitionTime={500}>
-          <Container>
+        <Container>
+          <PageTransition transitionTime={500}>
             <Main>{children}</Main>
-          </Container>
-        </PageTransition>
+          </PageTransition>
+        </Container>
         <Footer />
       </Wrapper>
     </ThemeProvider>
@@ -31,6 +31,8 @@ export default Layout
 
 const Wrapper = styled.div`
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 `
 
 const Main = styled.main`

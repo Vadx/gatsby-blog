@@ -8,6 +8,8 @@ export const Container = styled.div`
   margin-right: auto;
   max-width: ${props => props.theme.containerWidth};
   padding: 0 20px 0;
+  margin-top: auto;
+  margin-bottom: auto;
 `
 
 export const HeadlineH1 = styled.h1`

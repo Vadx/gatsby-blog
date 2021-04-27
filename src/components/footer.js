@@ -45,7 +45,7 @@ export default Footer
 // Styled components:
 
 const StyledFooter = styled.footer`
-  margin-top: 50px;
+  margin-top: auto;
   border-top: 1px solid ${props => props.theme.borderColor};
   padding: 20px 0;
 `

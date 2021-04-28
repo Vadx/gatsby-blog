@@ -2,14 +2,14 @@ import * as React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/Seo"
 
 const About = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="About" />
+      <Seo title="About" />
       <h1>Contact</h1>
       <p>Coming soon...</p>
     </Layout>

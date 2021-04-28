@@ -4,7 +4,7 @@ import styled from "styled-components"
 // Components
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/Seo"
 import Pagination from "../components/pagination"
 import Tags from "../components/tags"
 import { HeadlineH1 } from "../styles/styledComponents"
@@ -16,7 +16,7 @@ const BlogList = ({ data, location, pageContext }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <SEO title="All posts" />
+        <Seo title="All posts" />
         <p>No blog posts found.</p>
       </Layout>
     )
@@ -24,7 +24,7 @@ const BlogList = ({ data, location, pageContext }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <Seo title="All posts" />
 
       <List>
         {posts.map(post => {

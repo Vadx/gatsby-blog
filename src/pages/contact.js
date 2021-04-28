@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/Seo"
 import ContactForm from "../components/contact-form"
 
 const Contact = ({ data, location }) => {
@@ -10,7 +10,7 @@ const Contact = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Contact" />
+      <Seo title="Contact" />
       <h1>Contact</h1>
       <ContactForm />
     </Layout>

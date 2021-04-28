@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/Seo"
 import Tags from "../components/tags"
 import { HeadlineH1 } from "../styles/styledComponents"
 
@@ -15,7 +15,7 @@ const BlogPostTemplate = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO
+      <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
